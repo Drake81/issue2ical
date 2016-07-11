@@ -1,2 +1,6 @@
 settings.py
+gitlab-issues.ics
 venv/
+.idea/
+__pycache__/
+
