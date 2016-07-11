@@ -20,6 +20,7 @@ cp settings.example.py settings.py
 ```
 
 5. Execute script
-```
+
+```sh
 python issue2ical.py
 ```
