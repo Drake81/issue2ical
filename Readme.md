@@ -19,8 +19,9 @@ pip install -r requirements.txt
 cp settings.example.py settings.py
 ```
 
-5. Execute script
+## Run script
 
 ```sh
+source venv/bin/activate
 python issue2ical.py
 ```
