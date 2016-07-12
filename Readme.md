@@ -1,6 +1,6 @@
 # Issue2ical
 
-Generates an ical calendar file for issues with a due date and every milestone for each specified project.
+Generates an ical calendar for every milestone and every issue, which does have an due date.
 
 ## Setup
 
