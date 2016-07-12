@@ -52,7 +52,7 @@ def create_issue(issue, projectname):
     event = Event()
 
     #Parse Date from issue due date
-    #dyear, dmonth, dday = issue.milestone.due_date.split('-')
+    dyear, dmonth, dday = issue.due_date.split('-')
 
     event.add('summary', issue.title)
 
@@ -70,8 +70,8 @@ def create_issue(issue, projectname):
     event.add('categories', "Issue")
 
     ## We need the real eventday herre
-    event.add('dtstart', date.today())
-    #event.add('dtstart', date(int(dyear), int(dmonth), int(dday)))
+    #event.add('dtstart', date.today())
+    event.add('dtstart', date(int(dyear), int(dmonth), int(dday)))
     #event.add('dtend', datetime(2016,7,12,12,0,0,tzinfo=pytz.utc))
     event.add('dtstamp', datetime.utcnow())
 
@@ -112,11 +112,11 @@ for project in projects:
         print("ID:{:3} - {} - (Issues:{})".format(project.id, project.name, project.open_issues_count))
 
         # We need the due_date in the issue now
-        #for issue in project.issues.list(all=True):
-        #    if issue.state == 'opened' or issue.state == 'reopened':
-        #        event = create_issue(issue, project.name)
-        #        #Add the event to the calendar
-        #        cal.add_component(event)
+        for issue in project.issues.list(all=True):
+            if (issue.state == 'opened' or issue.state == 'reopened') and issue.due_date is not None:
+                event = create_issue(issue, project.name)
+                #Add the event to the calendar
+                cal.add_component(event)
 
         for milestone in project.milestones.list(all=True):
             if milestone.state == 'active':
@@ -126,6 +126,6 @@ for project in projects:
 
 
 #Write to disk:
-f = open(os.path.join(CALENDAR_PATH, 'gitlab-issues.ics'), 'wb')
+f = open(os.path.join(CALENDAR_PATH, 'calendar.ics'), 'wb')
 f.write(cal.to_ical())
 f.close()

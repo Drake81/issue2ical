@@ -2,5 +2,7 @@ settings.py
 gitlab-issues.ics
 venv/
 .idea/
+*.log
+cal/
 __pycache__/
 

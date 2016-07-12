@@ -14,6 +14,6 @@ GITLAB_REPOS = ("my-awesome-repo","rocket_science",)
 
 ## ICAL
 ### PATH to ical file
-CALENDAR_PATH = "."
+CALENDAR_PATH = "./cal"
 ### FQDN auf CALENDAR (Do not change if only used as local calendar)
 CALENDAR_FQDN = "example.org"
