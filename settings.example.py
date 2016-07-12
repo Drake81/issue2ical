@@ -12,8 +12,11 @@ GITLAB_PERSONAL_ACCESS_TOKEN= "nd23dHNKJ293Kdk782kJK37fhaJKBklas"
 ## Set of tracked repositories
 GITLAB_REPOS = ("my-awesome-repo","rocket_science",)
 
+
 ## ICAL
+
 ### PATH to ical file
 CALENDAR_PATH = "./cal"
-### FQDN auf CALENDAR (Do not change if only used as local calendar)
+
+### FQDN auf CALENDAR (Do not change, if used as local calendar)
 CALENDAR_FQDN = "example.org"
