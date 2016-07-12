@@ -152,3 +152,5 @@ if __name__ == "__main__":
 
     for project in gl.projects.list(all=True):
         create_events_from_project(project, cal)
+
+    write_Calendar(cal)
